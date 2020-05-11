@@ -1,0 +1,19 @@
+{
+  "name": "omen666/gtd_api_1_0",
+  "description": "Delivery service GTD api",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Aleksei Ivanov",
+      "email": "omen.ekb@yandex.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "src\\": "src/"
+    }
+  }
+}
