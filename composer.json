@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "omen666\\": "src/"
+      "'omen666\\gtd_api_1_0\\": "src/"
     }
   }
 }
