@@ -2,10 +2,6 @@
 
 namespace omen666\gtd_api_1_0;
 
-use omen666\gtd_api_1_0\services\geography\Address;
-use omen666\gtd_api_1_0\services\geography\City;
-use omen666\gtd_api_1_0\services\geography\Phone;
-use omen666\gtd_api_1_0\services\order\Calculate;
 use omen666\gtd_api_1_0\services\Service;
 
 class GtdApi
@@ -29,9 +25,9 @@ class GtdApi
      *
      * @return mixed
      */
-    public function cityGetList(array $params = []): array
+    public function geographyCityGetList(array $params = []): Service
     {
-        return $this->sendRequest(new City($params));
+        return $this->sendRequest(new services\geography\City($params));
     }
 
     /**
@@ -39,9 +35,9 @@ class GtdApi
      *
      * @return mixed
      */
-    public function addressGetList(array $params = []): array
+    public function geographyAddressGetList(array $params = []): Service
     {
-        return $this->sendRequest(new Address($params));
+        return $this->sendRequest(new services\geography\Address($params));
     }
 
     /**
@@ -49,9 +45,9 @@ class GtdApi
      *
      * @return mixed
      */
-    public function phoneGetList(array $params = []): array
+    public function geographyPhoneGetList(array $params = []): Service
     {
-        return $this->sendRequest(new Phone($params));
+        return $this->sendRequest(new services\geography\Phone($params));
     }
 
     /**
@@ -59,9 +55,19 @@ class GtdApi
      *
      * @return Service
      */
-    public function calculate(array $params = []): Service
+    public function orderCalculate(array $params = []): Service
     {
-        return $this->sendRequest(new Calculate($params));
+        return $this->sendRequest(new services\order\Calculate($params));
+    }
+
+    /**
+     * @param array $params
+     *
+     * @return Service
+     */
+    public function ttdCityGetList(array $params = []): Service
+    {
+        return $this->sendRequest(new services\tdd\City($params));
     }
 
     /**
